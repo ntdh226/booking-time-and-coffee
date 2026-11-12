@@ -1,0 +1,436 @@
+/* =========================
+   1. BIẾN MÀU + RESET
+========================= */
+
+:root {
+  --primary: #1476b8;
+  --primary-dark: #0f5f96;
+
+  --bg-page: #f4f6f9;
+  --bg-card: #ffffff;
+  --border: #e6e9ee;
+  --text: #2b3440;
+  --text-muted: #7a8594;
+
+  --orange-bg: #fff0dc;
+  --orange-text: #b36200;
+  --red-bg: #ffe3e3;
+  --red-text: #c0392b;
+  --green-bg: #e3f5e6;
+  --green-text: #2e7d32;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background-color: var(--bg-page);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* =========================
+   2. NAVBAR
+========================= */
+
+.staff-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+
+  min-height: 64px;
+  padding: 10px 28px;
+
+  background-color: var(--primary);
+  color: #fff;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar-logo {
+  font-size: 24px;
+}
+
+.navbar-brand h1 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.navbar-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-avatar {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.22);
+
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+
+.user-info strong {
+  font-size: 14px;
+}
+
+.user-info small {
+  font-size: 12px;
+  opacity: 0.85;
+}
+
+/* =========================
+   3. MAIN CONTENT
+========================= */
+
+.staff-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 28px 48px;
+}
+
+.page-heading {
+  margin-bottom: 22px;
+}
+
+.page-heading h2 {
+  font-size: 26px;
+  margin-bottom: 6px;
+}
+
+.page-heading p {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* =========================
+   4. TOOLBAR TÌM KIẾM
+========================= */
+
+.toolbar {
+  margin-bottom: 20px;
+  padding: 16px 20px;
+
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.search-input {
+  flex: 1;
+  min-width: 0;
+  max-width: 440px;
+  height: 44px;
+
+  padding: 0 14px;
+
+  border: 1px solid #ccd3dc;
+  border-radius: 8px;
+
+  font-size: 15px;
+  font-family: inherit;
+  color: var(--text);
+  background-color: #fff;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(20, 118, 184, 0.15);
+}
+
+.btn-search {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  height: 44px;
+  padding: 0 20px;
+
+  border: none;
+  border-radius: 8px;
+
+  background-color: var(--primary);
+  color: #fff;
+
+  font-size: 15px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+
+  transition: background-color 0.2s;
+}
+
+.btn-search:hover {
+  background-color: var(--primary-dark);
+}
+
+/* =========================
+   5. KHUNG BẢNG
+========================= */
+
+.table-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.table-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.table-card-header h3 {
+  font-size: 17px;
+}
+
+.table-count {
+  padding: 4px 12px;
+
+  border-radius: 999px;
+  background-color: #eaf3fa;
+  color: var(--primary);
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Cuộn ngang khi màn hình nhỏ */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* =========================
+   6. BẢNG DỮ LIỆU
+========================= */
+
+.booking-table {
+  width: 100%;
+  min-width: 780px;
+  border-collapse: collapse;
+}
+
+.booking-table th,
+.booking-table td {
+  padding: 14px 20px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.booking-table thead th {
+  background-color: #f8fafc;
+  color: var(--text-muted);
+
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.booking-table tbody td {
+  font-size: 15px;
+  border-bottom: 1px solid var(--border);
+}
+
+.booking-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.booking-table tbody tr {
+  transition: background-color 0.15s;
+}
+
+.booking-table tbody tr:hover {
+  background-color: #eaf3fb;
+}
+
+.col-action {
+  text-align: center !important;
+}
+
+.no-action {
+  color: #b5bcc7;
+}
+
+/* =========================
+   7. BADGE TRẠNG THÁI
+========================= */
+
+.status-badge {
+  display: inline-block;
+  padding: 5px 12px;
+
+  border-radius: 999px;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.status-waiting {
+  background-color: var(--orange-bg);
+  color: var(--orange-text);
+}
+
+.status-occupied {
+  background-color: var(--red-bg);
+  color: var(--red-text);
+}
+
+.status-done {
+  background-color: var(--green-bg);
+  color: var(--green-text);
+}
+
+/* =========================
+   8. NÚT THAO TÁC TRONG BẢNG
+========================= */
+
+.btn-action {
+  min-width: 92px;
+  padding: 8px 14px;
+
+  border: none;
+  border-radius: 6px;
+
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+
+  transition: background-color 0.2s;
+}
+
+.btn-checkin {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.btn-checkin:hover {
+  background-color: #43a047;
+}
+
+.btn-checkout {
+  background-color: #e8ebef;
+  color: #444;
+}
+
+.btn-checkout:hover {
+  background-color: #d8dce2;
+}
+
+/* =========================
+   9. RESPONSIVE
+========================= */
+
+/* Máy tính bảng */
+@media (max-width: 900px) {
+  .staff-navbar {
+    padding: 10px 20px;
+  }
+
+  .staff-main {
+    padding: 24px 20px 40px;
+  }
+
+  .search-input {
+    max-width: none;
+  }
+
+  /* Thu gọn bảng để thấy đủ cột Thao tác trên máy tính bảng */
+  .booking-table {
+    min-width: 680px;
+  }
+
+  .booking-table th,
+  .booking-table td {
+    padding: 12px 8px;
+  }
+
+  .booking-table tbody td {
+    font-size: 14px;
+  }
+}
+
+/* Điện thoại */
+@media (max-width: 600px) {
+  .navbar-brand h1 {
+    font-size: 16px;
+  }
+
+  .user-info small {
+    display: none;
+  }
+
+  .staff-main {
+    padding: 18px 14px 32px;
+  }
+
+  .page-heading h2 {
+    font-size: 22px;
+  }
+
+  .search-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-input {
+    flex: none;
+    width: 100%;
+  }
+
+  .btn-search {
+    justify-content: center;
+  }
+}

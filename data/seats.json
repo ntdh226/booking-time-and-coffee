@@ -1,0 +1,159 @@
+
+[
+  {
+    "seatID": "B01",
+    "seatName": "Bàn 01",
+    "floor": 1,
+    "type": "individual",
+    "capacity": 2,
+    "position": {
+      "area": "left",
+      "order": 1
+    },
+    "status": "available"
+  },
+  {
+    "seatID": "B02",
+    "seatName": "Bàn 02",
+    "floor": 1,
+    "type": "individual",
+    "capacity": 2,
+    "position": {
+      "area": "left",
+      "order": 2
+    },
+    "status": "available"
+  },
+  {
+    "seatID": "B03",
+    "seatName": "Bàn 03",
+    "floor": 1,
+    "type": "individual",
+    "capacity": 2,
+    "position": {
+      "area": "left",
+      "order": 3
+    },
+    "status": "available"
+  },
+  {
+    "seatID": "B04",
+    "seatName": "Bàn 04",
+    "floor": 1,
+    "type": "individual",
+    "capacity": 2,
+    "position": {
+      "area": "left",
+      "order": 4
+    },
+    "status": "available"
+  },
+  {
+    "seatID": "B05",
+    "seatName": "Bàn 05",
+    "floor": 1,
+    "type": "individual",
+    "capacity": 2,
+    "position": {
+      "area": "left",
+      "order": 5
+    },
+    "status": "available"
+  },
+  {
+    "seatID": "B06",
+    "seatName": "Bàn 06",
+    "floor": 1,
+    "type": "individual",
+    "capacity": 2,
+    "position": {
+      "area": "right",
+      "order": 1
+    },
+    "status": "available"
+  },
+  {
+    "seatID": "B07",
+    "seatName": "Bàn 07",
+    "floor": 1,
+    "type": "individual",
+    "capacity": 2,
+    "position": {
+      "area": "right",
+      "order": 2
+    },
+    "status": "available"
+  },
+  {
+    "seatID": "B08",
+    "seatName": "Bàn 08",
+    "floor": 1,
+    "type": "individual",
+    "capacity": 2,
+    "position": {
+      "area": "right",
+      "order": 3
+    },
+    "status": "available"
+  },
+  {
+    "seatID": "B09",
+    "seatName": "Bàn 09",
+    "floor": 1,
+    "type": "individual",
+    "capacity": 2,
+    "position": {
+      "area": "right",
+      "order": 4
+    },
+    "status": "available"
+  },
+  {
+    "seatID": "B10",
+    "seatName": "Bàn 10",
+    "floor": 1,
+    "type": "individual",
+    "capacity": 2,
+    "position": {
+      "area": "right",
+      "order": 5
+    },
+    "status": "available"
+  },
+  {
+    "seatID": "B11",
+    "seatName": "Bàn lớn",
+    "floor": 1,
+    "type": "largeTable",
+    "capacity": 8,
+    "position": {
+      "area": "center",
+      "order": 1
+    },
+    "status": "available"
+  },
+  {
+    "seatID": "P01",
+    "seatName": "Phòng họp 01",
+    "floor": 2,
+    "type": "meetingRoom",
+    "capacity": 8,
+    "position": {
+      "area": "meeting",
+      "order": 1
+    },
+    "status": "available"
+  },
+  {
+    "seatID": "P02",
+    "seatName": "Phòng họp 02",
+    "floor": 2,
+    "type": "meetingRoom",
+    "capacity": 10,
+    "position": {
+      "area": "meeting",
+      "order": 2
+    },
+    "status": "available"
+  }
+]

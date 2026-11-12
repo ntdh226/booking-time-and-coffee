@@ -1,0 +1,66 @@
+
+{
+  "pricing": {
+    "individual": {
+      "serviceName": "Chỗ ngồi cá nhân",
+      "extensionPricePerHour": 5000,
+      "packages": [
+        {
+          "duration": 2,
+          "selfServicePrice": 25000,
+          "shopDrinkPrice": 35000
+        },
+        {
+          "duration": 3,
+          "selfServicePrice": 30000,
+          "shopDrinkPrice": null
+        },
+        {
+          "duration": 4,
+          "selfServicePrice": 40000,
+          "shopDrinkPrice": null
+        },
+        {
+          "duration": 5,
+          "selfServicePrice": 45000,
+          "shopDrinkPrice": null
+        }
+      ]
+    },
+    "largeTable": {
+      "serviceName": "Bàn lớn",
+      "minPeople": 2,
+      "maxPeople": 8,
+      "extensionPricePerHour": 10000,
+      "packages": [
+        {
+          "duration": 2,
+          "servicePrice": 75000
+        },
+        {
+          "duration": 3,
+          "servicePrice": 80000
+        }
+      ],
+      "drinkPricePerPerson": {
+        "selfService": 5000,
+        "shopPrepared": 15000
+      }
+    },
+    "meetingRoom": {
+      "serviceName": "Phòng họp",
+      "extensionPricePerHour": 20000,
+      "packages": [
+        {
+          "duration": 2,
+          "servicePrice": 200000
+        }
+      ],
+      "drinkPricePerPerson": {
+        "selfService": 5000,
+        "shopPrepared": 15000
+      }
+    }
+  },
+  "currency": "VND"
+}

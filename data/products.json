@@ -1,0 +1,110 @@
+
+[
+  {
+    "productID": "SP001",
+    "productName": "Cà phê sữa",
+    "categoryID": "CAT001",
+    "description": "Cà phê sữa truyền thống",
+    "image": "assets/images/ca-phe-sua.jpg",
+    "status": "available"
+  },
+  {
+    "productID": "SP002",
+    "productName": "Cà phê đen",
+    "categoryID": "CAT001",
+    "description": "Cà phê đen truyền thống",
+    "image": "assets/images/bac-xiu.jpg",
+    "status": "available"
+  },
+  {
+    "productID": "SP003",
+    "productName": "Bạc Sỉu",
+    "categoryID": "CAT001",
+    "image": "assets/images/tra-dao.jpg",
+    "status": "available"
+  },
+  {
+    "productID": "SP004",
+    "productName": "Cà phê kem muối",
+    "categoryID": "CAT001",
+    "image": "assets/images/tra-dao.jpg",
+    "status": "available"
+  },
+  {
+    "productID": "SP005",
+    "productName": "Cà phê kem trứng",
+    "categoryID": "CAT001",
+    "image": "assets/images/tra-dao.jpg",
+    "status": "available"
+  },
+  {
+    "productID": "SP006",
+    "productName": "Trà sửa truyền thống",
+    "categoryID": "CAT002",
+    "image": "assets/images/tra-dao.jpg",
+    "status": "available"
+  },
+  {
+    "productID": "SP007",
+    "productName": "Trà sữa thái xanh",
+    "categoryID": "CAT002",
+    "image": "assets/images/tra-dao.jpg",
+    "status": "available"
+  }, 
+  {
+    "productID": "SP008",
+    "productName": "Trà Chanh",
+    "categoryID": "CAT003",
+    "image": "assets/images/tra-dao.jpg",
+    "status": "available"
+  },
+  {
+    "productID": "SP009",
+    "productName": "Trà Tắc",
+    "categoryID": "CAT003",
+    "image": "assets/images/tra-dao.jpg",
+    "status": "available"
+  },
+    {
+    "productID": "SP010",
+    "productName": "Nestcafe",
+    "categoryID": "CAT000",
+    "image": "assets/images/tra-dao.jpg",
+    "status": "available"
+  },
+  {
+    "productID": "SP011",
+    "productName": "Lipton Chanh",
+    "categoryID": "CAT000",
+    "image": "assets/images/tra-dao.jpg",
+    "status": "available"
+  },
+  {
+    "productID": "SP012",
+    "productName": "Lipton đào",
+    "categoryID": "CAT000",
+    "image": "assets/images/tra-dao.jpg",
+    "status": "available"
+  },
+  {
+    "productID": "SP013",
+    "productName": "Cozy Việt Quất",
+    "categoryID": "CAT000",
+    "image": "assets/images/tra-dao.jpg",
+    "status": "available"
+  },
+  {
+    "productID": "SP014",
+    "productName": "Cà Phê Phố",
+    "categoryID": "CAT000",
+    "image": "assets/images/tra-dao.jpg",
+    "status": "available"
+  },
+  {
+    "productID": "SP015",
+    "productName": "Cozy Trà sữa",
+    "categoryID": "CAT000",
+    "image": "assets/images/tra-dao.jpg",
+    "status": "available"
+  }
+]

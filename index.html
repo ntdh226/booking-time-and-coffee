@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý đặt chỗ Cafe</title>
+    <link rel="stylesheet" href="css/seats.css" />
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <h2>CAFE BOOKING</h2>
+      <span>Hệ thống quản lý chỗ ngồi</span>
+    </header>
+
+    <!-- WRAPPER -->
+    <div class="wrapper">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <h3>Khu vực</h3>
+
+        <button class="floor-btn active" data-floor="1">Tầng 1</button>
+
+        <button class="floor-btn" data-floor="2">Tầng 2</button>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <main class="seat-content">
+        <!-- TIÊU ĐỀ -->
+        <section class="summary">
+          <h3 id="floor-title">Sơ đồ tầng 1</h3>
+          <p id="floor-summary">Danh sách bàn và phòng</p>
+        </section>
+
+        <!-- CHÚ THÍCH TRẠNG THÁI -->
+        <section class="legend">
+          <div>
+            <span class="legend-color available"></span>
+            <span>Bàn trống</span>
+          </div>
+
+          <div>
+            <span class="legend-color waiting"></span>
+            <span>Chờ check-in</span>
+          </div>
+
+          <div>
+            <span class="legend-color occupied"></span>
+            <span>Đang sử dụng</span>
+          </div>
+        </section>
+
+        <!-- KHU VỰC SƠ ĐỒ VÀ THÔNG TIN -->
+        <section class="booking-layout">
+          <!-- SƠ ĐỒ BÀN -->
+          <div class="seat-map" id="seat-map">
+            <!-- BỐ CỤC TẦNG 1 -->
+            <div class="floor-one-map">
+              <!-- CỘT BÀN BÊN TRÁI -->
+              <div class="seat-column left-column">
+                <!-- JavaScript render bàn tại đây -->
+              </div>
+
+              <!-- BÀN LỚN Ở GIỮA -->
+              <div class="center-seat">
+                <!-- JavaScript render bàn lớn tại đây -->
+              </div>
+
+              <!-- CỘT BÀN BÊN PHẢI -->
+              <div class="seat-column right-column">
+                <!-- JavaScript render bàn tại đây -->
+              </div>
+            </div>
+          </div>
+
+          <!-- THÔNG TIN BÀN -->
+          <aside class="seat-detail" id="seat-detail">
+            <div class="detail-empty">
+              <h3>Thông tin bàn</h3>
+              <p>Vui lòng chọn một bàn để xem thông tin.</p>
+            </div>
+          </aside>
+        </section>
+      </main>
+    </div>
+
+    <!-- TEMPLATE MẪU BÀN -->
+    <template id="seat-card-template">
+      <div class="seat-card">
+        <h4 class="seat-name"></h4>
+
+        <span class="seat-capacity"></span>
+
+        <small class="seat-status"></small>
+      </div>
+    </template>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p>© 2026 Cafe Booking System</p>
+    </footer>
+
+    <!-- ========================================
+         MODAL ĐẶT BÀN 
+    ======================================== -->
+    <div class="modal-overlay" id="booking-modal">
+      <div
+        class="modal-content"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-title"
+      >
+        <h3 class="modal-title" id="modal-title">Xác nhận giữ chỗ</h3>
+        <p class="modal-table-name" id="selectedTableName"></p>
+
+        <form id="booking-form" onsubmit="handleBookingSubmit(event)">
+          <!-- ID bàn được chọn -->
+          <input type="hidden" id="selectedTableId" />
+
+          <div class="form-group">
+            <label for="customerName">Họ và tên</label>
+            <input
+              type="text"
+              id="customerName"
+              name="customerName"
+              placeholder="Nguyễn Văn A"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="customerPhone">Số điện thoại</label>
+            <input
+              type="tel"
+              id="customerPhone"
+              name="customerPhone"
+              placeholder="0901234567"
+              pattern="[0-9]{10}"
+              maxlength="10"
+              inputmode="numeric"
+              title="Số điện thoại gồm đúng 10 chữ số"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="expectedTime">Giờ dự kiến đến</label>
+            <input type="time" id="expectedTime" name="expectedTime" required />
+          </div>
+
+          <div class="form-group">
+            <label for="packageSelect">Gói giờ học</label>
+            <select
+              id="packageSelect"
+              name="packagePrice"
+              onchange="calculateTotal()"
+              required
+            >
+              <option value="">-- Chọn gói giờ học --</option>
+
+              <!-- I. Khách cá nhân -->
+              <option value="30000" data-type="individual">
+                Cá nhân 3h - 30.000đ
+              </option>
+              <option value="40000" data-type="individual">
+                Cá nhân 4h - 40.000đ
+              </option>
+              <option value="45000" data-type="individual">
+                Cá nhân 5h - 45.000đ
+              </option>
+
+              <!-- II. Khách đi theo nhóm (bàn 2 - 4 người) -->
+              <option value="75000" data-type="largeTable">
+                Nhóm 2h - 75.000đ
+              </option>
+              <option value="80000" data-type="largeTable">
+                Nhóm 4h - 80.000đ
+              </option>
+              <option value="100000" data-type="largeTable">
+                Nhóm 5h - 100.000đ
+              </option>
+              <option value="79000" data-type="largeTable">
+                Nhóm 6h - 79.000đ
+              </option>
+              <option value="100000" data-type="largeTable">
+                Nhóm 7h - 100.000đ
+              </option>
+
+              <!-- III. Phòng họp -->
+              <option value="200000" data-type="meetingRoom">
+                Phòng họp 2h - 200.000đ (kèm nước suối)
+              </option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="drinkSelect">Tùy chọn nước</label>
+            <select
+              id="drinkSelect"
+              name="drinkAddonPrice"
+              onchange="calculateTotal()"
+            >
+              <option value="0">Tự pha - 0đ</option>
+              <option value="10000">Nước pha sẵn - cộng thêm 10.000đ</option>
+            </select>
+            <small class="drink-note" id="drinkNote"></small>
+          </div>
+
+          <div class="total-box">
+            Tổng thanh toán dự kiến:
+            <strong><span id="totalPrice">0</span> VNĐ</strong>
+          </div>
+
+          <div class="modal-actions">
+            <button type="button" class="btn btn-cancel" onclick="closeModal()">
+              Hủy bỏ
+            </button>
+            <button type="submit" class="btn btn-confirm">
+              Xác nhận đặt bàn
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script src="js/seats.js"></script>
+  </body>
+</html>

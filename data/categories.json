@@ -1,0 +1,19 @@
+
+[
+  {
+    "categoryID": "CAT001",
+    "categoryName": "Cà phê"
+  },
+  {
+    "categoryID": "CAT002",
+    "categoryName": "Trà sữa"
+  },
+  {
+    "categoryID": "CAT003",
+    "categoryName": "Trà"
+  },
+  {
+    "categoryID": "CAT000",
+    "categoryName": "Tự pha"
+  }
+]

@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý nhân viên - Cafe Booking</title>
+    <link rel="stylesheet" href="css/staff.css" />
+  </head>
+
+  <body>
+    <!-- ========== NAVBAR ========== -->
+    <header class="staff-navbar">
+      <div class="navbar-brand">
+        <span class="navbar-logo">☕</span>
+        <h1>Hệ thống Quản lý Quán Cà Phê</h1>
+      </div>
+
+      <div class="navbar-user">
+        <span class="user-avatar">TN</span>
+        <div class="user-info">
+          <strong>Nhân viên Thu ngân</strong>
+          <small>Đang trực</small>
+        </div>
+      </div>
+    </header>
+
+    <!-- ========== NỘI DUNG CHÍNH ========== -->
+    <main class="staff-main">
+      <div class="page-heading">
+        <h2>Quản lý đặt bàn</h2>
+        <p>Tra cứu đơn theo số điện thoại, nhận bàn và trả bàn cho khách.</p>
+      </div>
+
+      <!-- THANH TÌM KIẾM -->
+      <section class="toolbar">
+        <form class="search-form" role="search">
+          <label class="visually-hidden" for="searchPhone"
+            >Số điện thoại khách hàng</label
+          >
+
+          <input
+            type="tel"
+            id="searchPhone"
+            class="search-input"
+            placeholder="Nhập số điện thoại khách hàng (10 số)"
+            pattern="[0-9]{10}"
+            maxlength="10"
+            inputmode="numeric"
+          />
+
+          <button type="submit" class="btn-search">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              width="18"
+              height="18"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <circle cx="11" cy="11" r="7"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <span>Tìm kiếm</span>
+          </button>
+        </form>
+      </section>
+
+      <!-- BẢNG DỮ LIỆU -->
+      <section class="table-card">
+        <div class="table-card-header">
+          <h3>Danh sách đơn đặt bàn</h3>
+          <span class="table-count">3 đơn</span>
+        </div>
+
+        <div class="table-container">
+          <table class="booking-table">
+            <thead>
+              <tr>
+                <th>STT</th>
+                <th>Mã/Tên Bàn</th>
+                <th>Tên Khách Hàng</th>
+                <th>Số Điện Thoại</th>
+                <th>Giờ Đến</th>
+                <th>Trạng Thái</th>
+                <th class="col-action">Thao Tác</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <!-- Dòng 1: khách chưa đến -->
+              <tr>
+                <td>1</td>
+                <td><strong>B01</strong> - Bàn 01</td>
+                <td>Nguyễn Văn A</td>
+                <td>0901234567</td>
+                <td>09:30</td>
+                <td>
+                  <span class="status-badge status-waiting">Đang chờ</span>
+                </td>
+                <td class="col-action">
+                  <button type="button" class="btn-action btn-checkin">
+                    Nhận bàn
+                  </button>
+                </td>
+              </tr>
+
+              <!-- Dòng 2: khách đang ngồi -->
+              <tr>
+                <td>2</td>
+                <td><strong>B05</strong> - Bàn 05</td>
+                <td>Trần Thị B</td>
+                <td>0987654321</td>
+                <td>08:00</td>
+                <td>
+                  <span class="status-badge status-occupied">Đang sử dụng</span>
+                </td>
+                <td class="col-action">
+                  <button type="button" class="btn-action btn-checkout">
+                    Trả bàn
+                  </button>
+                </td>
+              </tr>
+
+              <!-- Dòng 3: khách đã về -->
+              <tr>
+                <td>3</td>
+                <td><strong>B10</strong> - Bàn 10</td>
+                <td>Lê Minh C</td>
+                <td>0912345678</td>
+                <td>07:15</td>
+                <td>
+                  <span class="status-badge status-done">Đã hoàn thành</span>
+                </td>
+                <td class="col-action">
+                  <span class="no-action">—</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
